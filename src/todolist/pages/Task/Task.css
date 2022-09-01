@@ -44,9 +44,9 @@
     border-radius: 4px;
 }
 
-.edit-btn {
+.complete-btn {
     height: 25px;
-    width: 100px;
+    width: 80px;
     background-color: #F0E7E2;
     color: #3F4C52;
     border: 1px solid #4FB6C7;
@@ -54,12 +54,22 @@
     margin-right: 10px;
 }
 
-.delete-btn {
+.edit-btn {
     height: 25px;
-    width: 100px;
+    width: 80px;
     background-color: #3F4C52;
     color: #F0E7E2;
     border: 1px solid #4FB6C7;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.delete-btn {
+    height: 25px;
+    width: 80px;
+    background-color: #cc4646;
+    color: #F0E7E2;
+    border: 1px solid #3F4C52;
     border-radius: 4px;
 }
 

@@ -19,6 +19,7 @@ class Task extends Component {
                         <p className="task">task 1</p>
                         <p className="task">task 1</p>
                         <p className="task">task 1</p>
+                        <button className="complete-btn">complete</button>
                         <button className="edit-btn">edit</button>
                         <button className="delete-btn">delete</button>
                     </div>
