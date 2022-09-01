@@ -1,6 +1,5 @@
 .main {
     text-align: center;
-    width: 800px;
     height: fit-content;
     margin: auto;
     display: flex;
@@ -25,10 +24,12 @@
     margin-top: 20px;
 }
 
-input {
+.task-input {
     width: 500px;
+    max-width: 500px;
     height: 30px;
     margin-right: 10px;
+    margin-bottom: 20px;
     border: 1px solid #4FB6C7;
     border-radius: 4px;
     padding-left: 10px;
@@ -67,8 +68,32 @@ input {
 }
 
 .activetask {
+    max-width: 650px;
+    max-height: 300px;
     text-align: center;
     margin: auto;
+    padding-top: 20px;
+}
+
+.task-link {
+    font-size: large;
+    text-decoration: none;
+    color: #3F4C52;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    
+}
+
+.complete-link {
+    font-size: large;
+    color: #3F4C52;
+    text-decoration: none;
+    margin: auto;
+    margin-right: 10px;
+    margin-left: 100px;
+    margin-bottom: 10px;
 }
 
 .task {

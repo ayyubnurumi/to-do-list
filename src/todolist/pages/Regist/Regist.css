@@ -3,6 +3,7 @@
     height: fit-content;
     border: 1px solid #4FB6C7;
     border-bottom: 10px solid #4FB6C7;
+    border-top: 10px solid #4FB6C7;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
@@ -50,11 +51,11 @@ label {
     color: #3F4C52;
 }
 
-input {
+.form-input {
     margin: 10px;
     padding-left: 10px;
     max-width: 360px;
-    height: 20px;
+    height: 30px;
     border: 1px solid #4FB6C7;
 }
 
@@ -64,13 +65,22 @@ input {
 
 .regist-btn {
     width: 100px;
+    height: 30px;
     text-align: center;
     background-color: #4FB6C7;
     color: #F0E7E2;
     border: 1px solid #4FB6C7;
     border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .regist-btn:hover {
     cursor: pointer;
+}
+
+.a-form {
+    color: #3F4C52;
+    font-size: 13px;
+    text-decoration: none;
 }

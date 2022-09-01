@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
-// import Navbar from './todolist/components/Nav/NavBar';
-// import App from './App';
-// import Login from './todolist/pages/Login/Login';
-// import Home from './todolist/pages/Home/Home'
-import Task from '../src/todolist/components/Task/Task'
+
+import Home from './todolist/pages/Home/Home'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Task />
+    <Home />
   </React.StrictMode>
 );
 

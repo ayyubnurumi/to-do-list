@@ -1,32 +1,29 @@
-import React, { Component, Fragment } from "react";
-import "./Login.css";
-import Praxis from "./Praxis.png";
+import React from "react";
+import "../Regist/Regist.css";
+import { useNavigate } from "react-router-dom";
 
-class Login extends Component {
-    render() {
-        return (
-            <Fragment>
-                <div>
-                    <div className="form">
-                        <div className="img">
-                            <img src={Praxis} alt="logo-praxis"/>
-                        </div>
-                        <label>email</label>
-                        <input />
-                        <label>username</label>
-                        <input />
-                        <label>password</label>
-                        <input />
-                        <label>password lagi</label>
-                        <input />
-                        <div className="regist">
-                            <button className="regist-btn">register</button>
-                        </div>
-                    </div>
-                </div>
-            </Fragment>
-        )
-    }
-}
+const Login = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="form">
+      <h1 className="img">yok login yok</h1>
+      <label>username</label>
+      <input type="text" className="form-input" placeholder="sapa lo?"></input>
+      <label>password</label>
+      <input type="password" className="form-input" placeholder="passwordnya apa hayoo.."></input>
+      <div className="regist">
+        <button
+          className="regist-btn"
+          type="submit"
+          onClick={() => navigate("/task")}
+        >
+          signIn
+        </button>
+        <br />
+        <a className="a-form" href="/register">belom punya akun wak</a>
+      </div>
+    </div>
+  );
+};
 
 export default Login;

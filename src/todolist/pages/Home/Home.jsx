@@ -1,26 +1,19 @@
-import React, { Component } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "../Login/Login";
+import Regist from "../Regist/Regist";
+import Task from "../Task/Task";
 
-import Task from "../../components/Task/Task";
-
-class Home extends Component {
-    render(){
-        return(
-            <BrowserRouter>
-                <nav>
-                   <Link>akun</Link>
-                   <Link>active task</Link>
-                   <Link>complete task</Link>
-                </nav>
-                <Routes>
-                    <Route />
-                    <Route />
-                    <Route />
-                </Routes>
-                <Task />
-            </BrowserRouter>
-        )
-    }
-}
+const Home = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Regist />} />
+        <Route path="/task" element={<Task />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default Home;
