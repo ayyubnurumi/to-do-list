@@ -4,23 +4,51 @@ import Praxis from "./Praxis.png";
 import { useNavigate } from "react-router-dom";
 
 const Regist = () => {
-
   const navigate = useNavigate();
-  
+
+  const [data, getData] = ({
+    data: {
+      userEmail: "",
+      userName: "",
+      userPassword1: "",
+      userPassword2: ""
+    },
+  });
+
   return (
     <div>
-      <div className="form">
+      <div className="formcomp">
         <div className="img">
-          <img src={Praxis} alt="logo-praxis" />
+          <img className="logo-praxis" src={Praxis} alt="logo-praxis" />
         </div>
-        <label>email</label>
-        <input className="form-input" />
-        <label>username</label>
-        <input className="form-input" />
-        <label>password</label>
-        <input className="form-input" />
-        <label>password lagi</label>
-        <input className="form-input" />
+        <form className="form" action="" method="POST">
+          
+          <input className="form-input"
+          placeholder="email" 
+          value={data.userEmail}
+          onChange={getData} 
+          type="text" />
+          
+          <input className="form-input"
+          placeholder="username" 
+          value={data.userName}
+          onChange={getData} 
+          type="text" />
+          
+          <input className="form-input" 
+          placeholder="password"
+          value={data.userPassword1}
+          onChange={getData}
+          type="text" />
+          
+          <input 
+          className="form-input"
+          placeholder="password lagi"
+          value={data.userPassword2}
+          onChange={getData}
+          type="text" />
+
+        </form>
         <div className="regist">
           <button
             className="regist-btn"
