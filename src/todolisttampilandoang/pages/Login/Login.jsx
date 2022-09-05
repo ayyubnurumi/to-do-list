@@ -18,7 +18,7 @@ const Login = () => {
   // }
 
   return (
-    <div className="form">
+    <div className="formcomp">
       <h1 className="img">yok login yok</h1>
       <label>username</label>
       <input type="text" name="username" className="form-input" placeholder="sapa lo?"></input>

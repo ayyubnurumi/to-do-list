@@ -49,6 +49,8 @@
 
 .form {
     align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 .form-input {
