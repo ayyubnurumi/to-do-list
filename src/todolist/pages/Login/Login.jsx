@@ -13,10 +13,10 @@ const Login = () => {
   const Submit = async event => {
     event.preventDefault();
     
-    const {data} = await axios.post('http://192.168.1.15:8082/users/login', {
+    const {data} = await axios.post('http://192.168.171.119:8082/users/login', {
       userName, userPassword
-    }, {withCredentials: true}); 
-    
+    }); 
+    // console.log(response.data)
     axios.defaults.headers.common['Authorization']=`Bearer ${data['token']}`;
     
     setNavigate(true);
@@ -47,10 +47,10 @@ const Login = () => {
           />
         </label>
         <div className="regist">
-          <input
+          <button
             className="regist-btn"
             type="submit"
-          />
+          >signIn</button>
           <br />
           <a className="a-form" href="/register">
             belom punya akun wak
