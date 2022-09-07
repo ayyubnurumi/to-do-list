@@ -1,23 +1,32 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Regist.css";
 import Praxis from "./Praxis.png";
-// import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const Regist = () => {
-  // const navigate = useNavigate();
 
-  const [data, setData] = useState({});
+  const [userName, setUserName] = useState({});
+  const [userEmail, setUserEmail] = useState({});
+  const [userFirstName, setUserFirstName] = useState({});
+  const [userLastName, setUserLastName] = useState({});
+  const [userPhoneNumber, setUserPhoneNumber] = useState({});
+  const [userPassword1, setUserPassword1] = useState({});
+  const [userPassword2, setUserPassword2] = useState({});
+  
+  const [navigate, setNavigate] = useState(false);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setData(values => ({...values, [name]: value}))
-  };
-
-  const handleSubmit = (event) => {
+  const Submit = async event => {
     event.preventDefault();
-    console.log(data);
-  };
+    await axios.post('http://192.168.1.15:8082/users/register', {
+      userName, userEmail, userFirstName, userLastName, userPhoneNumber, userPassword1, userPassword2
+    });
+    setNavigate(true);
+  }
+
+  if (navigate) {
+    return <Navigate to='/login' />
+  }
 
   return (
     <div>
@@ -25,35 +34,42 @@ const Regist = () => {
         <div className="img">
           <img className="logo-praxis" src={Praxis} alt="logo-praxis" />
         </div>
-        <form className="form" onSubmit={handleSubmit} action="" method="POST">
+        <form className="form" onSubmit={Submit}>
           
           <input className="form-input"
-          placeholder="email" 
-          name="userEmail"
-          value={data.userEmail || ''}
-          onChange={handleChange} 
+          placeholder="username"
+          onChange={e => setUserName(e.target.value)} 
+          type="text" />
+
+          <input className="form-input"
+          placeholder="email"
+          onChange={e => setUserEmail(e.target.value)} 
           type="text" />
           
           <input className="form-input"
-          placeholder="username" 
-          name="userName"
-          value={data.userName || ''}
-          onChange={handleChange} 
+          placeholder="First Name"
+          onChange={e => setUserFirstName(e.target.value)} 
+          type="text" />
+
+          <input className="form-input"
+          placeholder="Last Name"
+          onChange={e => setUserLastName(e.target.value)} 
+          type="text" />
+
+          <input className="form-input"
+          placeholder="Phone Number"
+          onChange={e => setUserPhoneNumber(e.target.value)} 
           type="text" />
           
           <input className="form-input" 
           placeholder="password"
-          name="userPassword1"
-          value={data.userPassword1 || ''}
-          onChange={handleChange}
+          onChange={e => setUserPassword1(e.target.value)}
           type="text" />
           
           <input 
           className="form-input"
           placeholder="password lagi"
-          name="userPassword2"
-          value={data.userPassword2 || ''}
-          onChange={handleChange}
+          onChange={e => setUserPassword2(e.target.value)}
           type="text" />
 
           <button

@@ -1,34 +1,40 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "../Regist/Regist.css";
-// import { useNavigate } from "react-router-dom";
-// import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
 
-  const [payload, setPayload] = useState({});
+  const [userName, setUserName] = useState({});
+  const [userPassword, setUserPassword] = useState({});
+  
+  const [navigate, setNavigate] = useState(false);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setPayload(values => ({...values, [name]: value}))
-  };
-
-  const handleSubmit = (event) => {
+  const Submit = async event => {
     event.preventDefault();
-    console.log(payload);
-  };
+    
+    const {data} = await axios.post('http://192.168.1.15:8082/users/login', {
+      userName, userPassword
+    }, {withCredentials: true}); 
+    
+    axios.defaults.headers.common['Authorization']=`Bearer ${data['token']}`;
+    
+    setNavigate(true);
+  }
+
+  if (navigate) {
+    return <Navigate to='/' />
+  }
 
   return (
     <div className="formcomp">
       <h1 className="img">yok login yok</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={Submit}>
         <label>username
           <input
             className="form-input"
             type="text"
-            name="userName"
-            value={payload.userName || ''}
-            onChange={handleChange}
+            onChange={e => setUserName(e.target.value)}
             placeholder="sapa lo?"
           />
         </label>
@@ -36,23 +42,21 @@ const Login = () => {
           <input
             className="form-input"
             type="text"
-            name="userPassword"
-            value={payload.userPassword || ''}
-            onChange={handleChange}
+            onChange={e => setUserPassword(e.target.value)}
             placeholder="passwordnya apa hayoo.."
           />
         </label>
-        <input
-          className="regist-btn"
-          type="submit"
-        />
+        <div className="regist">
+          <input
+            className="regist-btn"
+            type="submit"
+          />
+          <br />
+          <a className="a-form" href="/register">
+            belom punya akun wak
+          </a>
+        </div>
       </form>
-      <div className="regist">
-        <br />
-        <a className="a-form" href="/register">
-          belom punya akun wak
-        </a>
-      </div>
     </div>
   );
 };
