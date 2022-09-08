@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Task.css";
 
@@ -7,22 +7,20 @@ const Task = ()=> {
     const [taskName, setTaskName] = useState({});
     const [taskDetail, setTaskDetail] = useState({});
 
-    // const Submit = async e => {
-    //     e.preventDefault();
-        
-    //     const {data} = await axios.post('http://192.168.1.17:8082/task/create', {
-    //         taskName, taskDetail
-    //     }); 
-    //     // console.log(data);
-    //     // axios.defaults.headers.common['Authorization']=`Bearer ${data['token']}`;    
-    //     // console.log(taskName, taskDetail)
-    // }
     async function Submit (e){
         e.preventDefault();
-        await axios.post('http://192.168.1.17:8082/task/create', {
+        await axios.post('task/create', {
             taskName, taskDetail
         });
     }
+
+    useEffect(() => {
+        (async ()=>{
+            const {data}= await axios.get('task/detail');
+            setTaskName(data.taskName)
+            setTaskDetail(data.taskDetail)
+        })();
+    }, []);
 
     return (
         <div className="main">
@@ -48,7 +46,7 @@ const Task = ()=> {
                     <a className="complete-link" href="-">complete task</a>
                 </div>
                 <div className="activetask">
-                    <p className="task">task 1</p>
+                    <p className="task">{taskName}{taskDetail}</p>
                     <button  className="complete-btn">complete</button>
                     <button  className="edit-btn">edit</button>
                     <button  className="delete-btn">delete</button>

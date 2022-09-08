@@ -18,9 +18,11 @@ const Regist = () => {
 
   const Submit = async event => {
     event.preventDefault();
-    await axios.post('http://192.168.1.17:8082/users/register', {
+    
+    await axios.post('users/register', {
       userName, userEmail, userFirstName, userLastName, userPhoneNumber, userPassword1, userPassword2
     });
+    
     setNavigate(true);
   }
 

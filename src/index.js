@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
+import './todolist/interceptors/axios'
+
 
 
 // import App from '../src/todolist/App'
