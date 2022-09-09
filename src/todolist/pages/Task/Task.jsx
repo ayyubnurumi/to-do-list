@@ -16,7 +16,7 @@ const Task = ()=> {
 
     useEffect(() => {
         (async ()=>{
-            const {data}= await axios.get('task/detail');
+            const {data}= await axios.post('task/list');
             setTaskName(data.taskName)
             setTaskDetail(data.taskDetail)
         })();
@@ -46,7 +46,7 @@ const Task = ()=> {
                     <a className="complete-link" href="-">complete task</a>
                 </div>
                 <div className="activetask">
-                    <p className="task">{taskName}{taskDetail}</p>
+                    {/* <p className="task">{taskName}{taskDetail}</p> */}
                     <button  className="complete-btn">complete</button>
                     <button  className="edit-btn">edit</button>
                     <button  className="delete-btn">delete</button>
