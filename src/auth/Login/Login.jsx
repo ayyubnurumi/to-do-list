@@ -52,7 +52,7 @@ const Login = () => {
             type="submit"
           >signIn</button>
           <br />
-          <a className="a-form" href="/register">
+          <a className="a-form" href="/registration">
             belom punya akun wak
           </a>
         </div>

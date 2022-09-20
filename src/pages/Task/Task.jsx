@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Task.css";
+import { Outlet } from "react-router";
 
 const Task = ()=> {
 
@@ -46,10 +47,7 @@ const Task = ()=> {
                     <a className="complete-link" href="-">complete task</a>
                 </div>
                 <div className="activetask">
-                    {/* <p className="task">{taskName}{taskDetail}</p> */}
-                    <button  className="complete-btn">complete</button>
-                    <button  className="edit-btn">edit</button>
-                    <button  className="delete-btn">delete</button>
+                    <Outlet />
                 </div>
             </div>
         </div>
