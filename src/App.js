@@ -13,6 +13,8 @@ import { AuthLayout } from "./auth/AuthLayout";
 import Login from "./auth/Login/Login";
 import Regist from "./auth/Regist/Regist";
 import Task from "./pages/Task/Task";
+import { ActiveTask } from "./pages/ActiveTask";
+import { CompleteTask } from "./pages/CompleteTask";
 
 function App() {
   return (
@@ -26,8 +28,11 @@ function App() {
           </Route>
         </Route>
         <Route path="/" element={<ProtectedRoute />}>
-          <Route index path="/task" element={<Task />} />
-          <Route path="/" element={<Navigate to={"/task"} replace />} />
+          <Route path="/" element={<Task />}>
+            <Route index path="/activetask" element={<ActiveTask />} />
+            <Route path="/completetask" element={<CompleteTask />} />
+            <Route path="/" element={<Navigate to={"/activetask"} replace />} />
+          </Route>
         </Route>
         <Route path="*" element={<Navigate to={"/"} replace />} />
       </Routes>

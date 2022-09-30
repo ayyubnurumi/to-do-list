@@ -4,53 +4,59 @@ import "../Regist/Regist.css";
 import { Navigate } from "react-router-dom";
 
 const Login = () => {
-
   const [userName, setUserName] = useState({});
   const [userPassword, setUserPassword] = useState({});
-  
+
   const [navigate, setNavigate] = useState(false);
 
-  const Submit = async event => {
+  const Submit = async (event) => {
     event.preventDefault();
-    
-    const {data} = await axios.post('users/login', {
-      userName, userPassword
+
+    const user = await axios.post("users/login", {
+      userName,
+      userPassword,
     });
-    // console.log(response.data)
-    axios.defaults.headers.common['Authorization']=`Bearer ${data['accessToken']}`;
+    // console.log(user.data)
     
+    const userCredentials = {
+      ...user.data["accesToken"],
+    };
+
+    localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
+
     setNavigate(true);
-  }
+  };
 
   if (navigate) {
-    return <Navigate to='/' />
+    return <Navigate to="/" />;
   }
 
   return (
     <div className="formcomp">
       <h1 className="img">yok login yok</h1>
       <form onSubmit={Submit}>
-        <label>username
+        <label>
+          username
           <input
             className="form-input"
             type="text"
-            onChange={e => setUserName(e.target.value)}
+            onChange={(e) => setUserName(e.target.value)}
             placeholder="sapa lo?"
           />
         </label>
-        <label>password
+        <label>
+          password
           <input
             className="form-input"
             type="text"
-            onChange={e => setUserPassword(e.target.value)}
+            onChange={(e) => setUserPassword(e.target.value)}
             placeholder="passwordnya apa hayoo.."
           />
         </label>
         <div className="regist">
-          <button
-            className="regist-btn"
-            type="submit"
-          >signIn</button>
+          <button className="regist-btn" type="submit">
+            signIn
+          </button>
           <br />
           <a className="a-form" href="/registration">
             belom punya akun wak

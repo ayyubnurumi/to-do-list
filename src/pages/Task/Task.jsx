@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Task.css";
 import { Outlet } from "react-router";
@@ -15,13 +15,13 @@ const Task = ()=> {
         });
     }
 
-    useEffect(() => {
-        (async ()=>{
-            const {data}= await axios.post('task/list');
-            setTaskName(data.taskName)
-            setTaskDetail(data.taskDetail)
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async ()=>{
+    //         const {data}= await axios.post('task/list');
+    //         setTaskName(data.taskName)
+    //         setTaskDetail(data.taskDetail)
+    //     })();
+    // }, []);
 
     return (
         <div className="main">
@@ -43,8 +43,8 @@ const Task = ()=> {
             </form>
             <div>
                 <div>
-                    <a className="task-link" href="-">active task</a>
-                    <a className="complete-link" href="-">complete task</a>
+                    <a className="task-link" href="/activetask">active task</a>
+                    <a className="complete-link" href="/completetask">complete task</a>
                 </div>
                 <div className="activetask">
                     <Outlet />
