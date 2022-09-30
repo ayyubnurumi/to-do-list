@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Task.css";
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 
 const Task = ()=> {
+    const navigate = useNavigate()
 
     const [taskName, setTaskName] = useState({});
     const [taskDetail, setTaskDetail] = useState({});
@@ -15,17 +16,15 @@ const Task = ()=> {
         });
     }
 
-    // useEffect(() => {
-    //     (async ()=>{
-    //         const {data}= await axios.post('task/list');
-    //         setTaskName(data.taskName)
-    //         setTaskDetail(data.taskDetail)
-    //     })();
-    // }, []);
+    const logout = () =>  {
+        localStorage.removeItem('userCredentials');
+        navigate('/login')
+    }
 
     return (
         <div className="main">
             <h1 className="header">nu's to do list</h1>
+            <button className="logout" onClick={() => logout()} >LogOut</button>
             <form className="newtask" onSubmit={Submit}>
                 <input 
                 type="text"

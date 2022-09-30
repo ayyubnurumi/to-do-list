@@ -16,11 +16,10 @@ const Login = () => {
       userName,
       userPassword,
     });
-    // console.log(user.data)
+    console.log(user.data)
     
-    const userCredentials = {
-      ...user.data["accesToken"],
-    };
+    const userCredentials = user.data.accessToken;
+    console.log(userCredentials)
 
     localStorage.setItem("userCredentials", JSON.stringify(userCredentials));
 
@@ -28,7 +27,7 @@ const Login = () => {
   };
 
   if (navigate) {
-    return <Navigate to="/" />;
+    return <Navigate to="/activetask" />;
   }
 
   return (

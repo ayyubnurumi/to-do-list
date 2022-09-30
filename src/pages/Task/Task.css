@@ -8,6 +8,17 @@
     position: relative;
 }
 
+.logout {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #cc4646;
+}
+
+.logout :hover {
+    cursor: pointer;
+}
+
 .header {
     margin-top: 50px;
     font-size: 70px;
