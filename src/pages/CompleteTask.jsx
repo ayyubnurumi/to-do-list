@@ -2,6 +2,9 @@ import React from "react";
 
 export const CompleteTask = () => {
     return (
-        <p>ini CompleteTask</p>
+        <dl>
+            <dt>taskName</dt>
+            <dd>taskdetail</dd>
+        </dl>
     )
 }

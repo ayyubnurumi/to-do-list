@@ -12,5 +12,5 @@ const isUserLogin = () => {
 
 export const PublicRoute = () => {
   const getOut = isUserLogin();
-  return getOut ? <Navigate to={"/activetask"} replace /> : <Outlet />;
+  return getOut ? <Navigate to={"/"} replace /> : <Outlet />;
 };
