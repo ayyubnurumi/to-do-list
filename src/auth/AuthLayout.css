@@ -1,0 +1,89 @@
+#body {
+    width: 101.2%;
+    margin: -8px;
+}
+
+header {
+    height: 60px;
+    background-color: black;
+    color: ivory;
+    text-align: center; 
+    padding: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+header a.home {
+    background-color: tomato;
+    border: 2px inset darkred;
+    border-radius: 6px;
+    color: ivory;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 20px 5px 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+header h1 {
+    margin-left: auto;
+    margin: auto;
+}
+
+header div.btn {
+    position: absolute;
+    right: 20px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+header div.btn a {
+    background-color: black;
+    border: 2px inset lightgray;
+    border-radius: 6px;
+    color: ivory;
+    padding: 5px;
+    text-decoration: none;
+}
+
+header div.btn a:hover {
+    background-color: darkgrey;
+    color: black;
+    cursor: pointer;
+}
+
+header div.btn a.regist {
+    margin-left: 10px;
+}
+
+header div.btn a.login {
+    margin-right: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 500px;
+}
+
+form h1 {
+    text-align: center;
+}
+
+form label {
+    margin-bottom: 3px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+form input {
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid darkgrey;
+    border-radius: 6px;
+    padding-left: 20px;
+}
