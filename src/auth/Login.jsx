@@ -1,30 +1,27 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-  const [navigate, setnavigate] = useState(false);
+  const navigate = useNavigate()
   const [data, setdata] = useState({
     userName: "",
     userPassword: "",
   });
   console.log(data);
 
-  async function onLogin() {
+  async function onLogin(e) {
     try {
-      await axios.post("http://192.168.1.12:8082/users/login", data);
-      setnavigate(true);
+      e.preventDefault();
+      await axios.post("http://192.168.1.54:8082/users/login", data);
+      navigate('/home');
     } catch (error) {
       console.log(error);
     }
   }
 
-  if (navigate) {
-    return <Navigate to="/home" />;
-  }
-
   return (
-    <form onSubmit={onLogin}>
+    <form>
       <h1>LogIn</h1>
       <label htmlFor="userName">Username</label>
       <input
@@ -42,7 +39,7 @@ export const Login = () => {
         placeholder="password"
         onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
       />
-      <input type="submit" value="LogIn" />
+      <input type="submit" value="LogIn" onClick={onLogin}/>
     </form>
   );
 };

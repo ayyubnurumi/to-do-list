@@ -1,5 +1,6 @@
 import {
   BrowserRouter as Router,
+  Navigate,
   Route,
   Routes,
 } from "react-router-dom";
@@ -15,8 +16,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<AuthLayout />}>
-          <Route index path="login" element={<Login />} />
-          <Route path="registration" element={<Registration />} />
+          <Route index path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/" element={<Navigate to="/login" />} />
         </Route>
         <Route path="/home" element={<Home />} />
       </Routes>
