@@ -1,22 +1,44 @@
-h1 {
+h1.layout-header {
     text-align: center;
 }
 
-aside {
+div.layout {
     display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: fit-content;
-    border: 1px solid red;
+    flex-direction: row;
 }
 
-aside nav a {
-    width: 120px;
-    height: 50px;
+aside {
+    flex: 1;
+    max-width: fit-content;
+    height: fit-content;
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+}
+
+aside nav a{
     text-decoration: none;
+    font-size: large;
     color: black;
-    margin-bottom: 50px;
-    border: 1px solid black;
+    border-left: 3px solid black;
+    border-right: 2px solid black;
     border-radius: 6px;
-    padding: 20px 20px;
+    height: 40px;
+    margin-bottom: 2px;
+    padding: 15px 20px 0;
+}
+
+section {
+    flex: 2;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
 }

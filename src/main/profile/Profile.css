@@ -1,0 +1,19 @@
+h1 {
+    text-align: left;
+    margin-left: 50px;
+}
+
+table {
+    width: 95%;
+    margin: 0 30px;
+}
+
+th, td {
+    border-bottom: 1px solid darkgray;
+    text-align: left;
+}
+
+th {
+    padding: 10px 0 10px 20px;
+    width: 123px;
+}

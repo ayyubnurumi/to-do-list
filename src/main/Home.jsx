@@ -1,28 +1,27 @@
 import React from 'react';
+import { Outlet } from 'react-router';
 import './Home.css'
 
 export const Home = () => {
+
+    const logout = () => localStorage.removeItem('userCredentials')
   return (
     <div>
-        <h1>todolist ayyub</h1>
+        <h1 className='layout-header'>todolist ayyub</h1>
         <hr></hr>
-        <aside>
-            <nav>
-                <a href='-'>profile</a>
-                <a href='-'>all task</a>
-                <a href='-'>complete task</a>
-                <a href='/login'>logout</a>
-            </nav>
-        </aside>
-        <form>
-            <input type='text' />
-            <input type='submit'/>
-        </form>
-        <section>
-            <ul>
-                <li>task 1</li>
-            </ul>
-        </section>
+        <div className='layout'>
+            <aside>
+                <nav>
+                    <a href='profile'>profile</a>
+                    <a href='home'>all task</a>
+                    <a href='complete-task'>complete task</a>
+                    <a href='login' onClick={logout}>logout</a>
+                </nav>
+            </aside>
+            <section>
+                <Outlet />
+            </section>
+        </div>
         <footer>made by ayyub</footer>
     </div>
   )
