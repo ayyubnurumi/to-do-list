@@ -86,6 +86,7 @@ export const Registration = () => {
         autoComplete="on"
       />
       <input type="submit" onClick={onSubmit} />
+      <p className="p">already have an account! <a href="login">logIn</a></p>
     </form>
   );
 };

@@ -1,0 +1,72 @@
+#body {
+    width: 101.2%;
+    margin: -8px;
+}
+
+#header {
+    height: 60px;
+    background-color: black;
+    text-align: center; 
+    display: flex;
+    flex-direction: row;
+}
+
+#title {
+    margin: auto;
+}
+
+
+#title, .link :hover {
+    cursor: pointer;
+}
+
+.link {
+    color: ivory;
+    text-decoration: none;
+}
+
+.account {
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+form h1 {
+    text-align: center;
+}
+
+form label {
+    margin-bottom: 3px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+form input {
+    height: 30px;
+    margin-bottom: 10px;
+    border: 1px solid darkgrey;
+    border-radius: 6px;
+    padding-left: 20px;
+}
+
+.p {
+    text-align: center;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    padding-top: 20px;
+    border-top: 2px solid darkgray;
+}

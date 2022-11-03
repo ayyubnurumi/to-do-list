@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 
-export const AddTask = () => {
+export const Task = () => {
   return (
     <div>
       <form>

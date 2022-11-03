@@ -5,7 +5,7 @@ export const Profile = () => {
   const userData =  JSON.parse(localStorage.userCredentials)
   return (
     <div>
-      <h1>Profile</h1>
+      <h1 className='profile'>Profile</h1>
       <table>
         <tbody>
           <tr>

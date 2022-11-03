@@ -40,7 +40,8 @@ export const Login = () => {
         placeholder="password"
         onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
       />
-      <input type="submit" value="LogIn" onClick={onLogin}/>
+      <input type="submit" value="LogIn" onClick={onLogin} />
+      <p className="p">don't have an account? <a href="registration">register</a></p>
     </form>
   );
 };
