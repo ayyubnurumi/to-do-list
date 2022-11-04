@@ -1,0 +1,40 @@
+#body {
+    width: 101.2%;
+    margin: -8px;
+}
+
+#header {
+    height: 60px;
+    background-color: black;
+    text-align: center; 
+    display: flex;
+    flex-direction: row;
+}
+
+#title {
+    margin: auto;
+}
+
+
+#title, .link :hover {
+    cursor: pointer;
+}
+
+.link {
+    color: ivory;
+    text-decoration: none;
+}
+
+.account {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 2px solid darkgray;
+}

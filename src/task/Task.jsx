@@ -1,14 +1,17 @@
 import React from "react";
-import { Outlet } from "react-router";
+import './Task.css'
 
 export const Task = () => {
   return (
-    <div>
-      <form>
-        <input type="text" />
-        <input type="submit" />
+    <div id="task-container">
+      <form id="add-task">
+        <input type="text" id="taskName" />
+        <input type="text" id="taskDetail" />
+        <input type="submit" value="add"/>
       </form>
-      <Outlet />
+      <ol >
+        <li>task</li>
+      </ol>
     </div>
   );
 };

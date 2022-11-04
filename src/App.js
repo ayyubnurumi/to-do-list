@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-import { Layout } from "./home/Layout";
+import { Layout } from "./layout/Layout";
 import { Login } from "./auth/Login";
 import { Registration } from "./auth/Registration";
 import { Task } from "./task/Task";

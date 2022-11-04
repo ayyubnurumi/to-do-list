@@ -4,9 +4,9 @@ import './Profile.css'
 export const Profile = () => {
   const userData =  JSON.parse(localStorage.userCredentials)
   return (
-    <div>
-      <h1 className='profile'>Profile</h1>
-      <table>
+    <div id='profie-container'>
+    <h1 className='title'>Profile</h1>
+      <table id='user-data'>
         <tbody>
           <tr>
             <th>username</th>

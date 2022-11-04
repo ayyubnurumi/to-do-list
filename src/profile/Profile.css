@@ -1,11 +1,16 @@
-.profile {
-    text-align: left;
-    margin-left: 50px;
+#profile-container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
-table {
-    width: 95%;
-    margin: 0 30px;
+#user-data {
+    width: 40%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
 }
 
 th, td {
