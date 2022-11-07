@@ -17,7 +17,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index path="login" element={<Login />} />
+          <Route index path="login" element={<Login />} replace/>
           <Route path="registration" element={<Registration />} />
           <Route path="home" element={<Task />} />
           <Route path="profile" element={<Profile />} />

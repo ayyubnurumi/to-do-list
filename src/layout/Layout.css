@@ -11,6 +11,10 @@
     flex-direction: row;
 }
 
+.icon {
+    color: ivory;
+}
+
 #title {
     margin: auto;
 }
@@ -26,9 +30,10 @@
 }
 
 .account {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    float: right;
+    margin-right: 30px;
+    background-color: black;
+    border-style: none;
 }
 
 #footer {

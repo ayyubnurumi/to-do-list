@@ -5,4 +5,9 @@
 
 #add-task {
     margin: auto;
+    margin-top: 50px;
+}
+
+#task-list {
+    list-style-position: inside;
 }

@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserAstronaut, faCircle } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'
 import { Outlet } from 'react-router'
 import './Layout.css'
@@ -8,11 +10,7 @@ export const Layout = () => {
     <div id='body'>
         <header id='header'>
           <h1 id='title'><a className='link' href='home'>to-do-list ayyub</a></h1>
-          <select>
-            <option><a className='link account' href='profile'>account</a></option>
-            <option><a href='login' onClick={logout}>logout</a></option>
-          </select>
-          
+          <button className='account' onClick={logout}><FontAwesomeIcon className='icon' icon={faUserAstronaut} mask={faCircle} size='3x' /></button>                
         </header>
         <Outlet />
         <footer id='footer'>made by ayyub</footer>

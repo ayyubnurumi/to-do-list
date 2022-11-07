@@ -9,7 +9,7 @@ export const Task = () => {
         <input type="text" id="taskDetail" />
         <input type="submit" value="add"/>
       </form>
-      <ol >
+      <ol id="task-list">
         <li>task</li>
       </ol>
     </div>
