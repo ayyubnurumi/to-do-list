@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Navigate } from "react-router";
+import "./auth.css"
 
 export const Registration = () => {
   const [navigate, setnavigate] = useState(false);

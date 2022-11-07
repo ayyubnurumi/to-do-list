@@ -4,10 +4,51 @@
 }
 
 #add-task {
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+#add-task input {
     margin: auto;
-    margin-top: 50px;
+    width: 45%;
+}
+
+#add-task input.submit {
+    width: 70px;
+    padding: 0;
+    margin-left: 5px;
+}
+
+#task-box {
+    width: 40%;
+    margin: auto;
+    max-height: 500px;
+    text-align: left;
+    padding: 17px;
+    border-radius: 17px;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 #task-list {
-    list-style-position: inside;
+    width: 100%;
+    margin: 9px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+#task-list button {
+    float: right;
+    opacity: 0.01;
+}
+
+#task-list:hover button {
+    opacity: 1;
+}
+
+#task-list button:hover {
+    cursor: pointer;
 }
