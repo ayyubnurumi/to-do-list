@@ -37,6 +37,10 @@
   border-style: none;
 }
 
+.account:hover {
+  cursor: pointer;
+}
+
 .menu {
   position: absolute;
   right: 10px;
@@ -47,13 +51,15 @@
   padding: 0;
 
   border: 1px solid grey;
+  border-radius: 9px;
   width: 150px;
+  box-sizing: border-box;
 }
 
 .menu > li {
   margin: 0;
 
-  background-color: white;
+  background-color: ivory;
 }
 
 .menu > li:hover {
@@ -67,9 +73,9 @@
 
   background: none;
   color: inherit;
-  border: none;
+  border: 1px solid darkgray;
   padding: 5px;
-  margin: 0;
+  margin: 5px;
   font: inherit;
   cursor: pointer;
 }
