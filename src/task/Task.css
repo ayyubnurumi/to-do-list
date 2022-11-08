@@ -1,13 +1,20 @@
 #task-container {
     width: 100%;
-    text-align: center;
+    background-image: url('task-bg.jpg');
+    background-size: 20%;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #add-task {
     width: 70%;
-    margin: 30px auto;
+    margin: auto;
     display: flex;
     flex-direction: row;
+    padding: 17px;
+    background-color: ivory;
+    border: 1px solid ivory;
+    border-radius: 17px;
     box-sizing: border-box;
 }
 
@@ -25,9 +32,11 @@
 #task-box {
     width: 40%;
     margin: auto;
+    margin-top: 40px;
     max-height: 500px;
     text-align: left;
     padding: 17px;
+    background-color: ivory;
     border-radius: 17px;
     box-sizing: border-box;
     overflow-x: hidden;

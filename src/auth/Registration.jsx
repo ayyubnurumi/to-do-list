@@ -6,10 +6,10 @@ import "./auth.css";
 export const Registration = () => {
   const navigate = useNavigate();
   const [data, setdata] = useState({
-    userFirsName: "",
-    userLastName: "",
     userName: "",
     userEmail: "",
+    userFirsName: "",
+    userLastName: "",
     userPhoneNumber: "",
     userPassword1: "",
     userPassword2: "",
@@ -64,11 +64,11 @@ export const Registration = () => {
         <input
           id="userPhoneNumber"
           type="tel"
-          pattern="0[0-9]{3}-[0-9]{4}-[0-9]{4}"
+          pattern="0[0-9]{3}[0-9]{7-8}"
           onChange={(e) =>
             setdata({ ...data, userPhoneNumber: e.target.value })
           }
-          placeholder="format: 0888-1234-5679"
+          placeholder="format: 088812345679"
         />
         <label htmlFor="userPassword1">Password</label>
         <input

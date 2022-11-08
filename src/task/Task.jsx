@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import './Task.css'
 
 export const Task = () => {
-  const [newTask, setnewTask] = useState({taskName: '', taskDetail: '', taskId: ''});
+  const [newTask, setnewTask] = useState({taskName: '', taskDetail: ''});
   const data = [
     {
       "taskDetail": "mato",

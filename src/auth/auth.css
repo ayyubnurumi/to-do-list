@@ -17,11 +17,10 @@ form.auth {
     flex-direction: column;
     margin: auto;
     width: 500px;
-    border: 1px solid lightgray;
+    border: 1px solid ivory;
     padding: 10px;
     border-radius: 17px;
     background-color: ivory;
-    opacity: 0.9;
 }
 
 form.auth h1 {
