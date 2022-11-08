@@ -57,7 +57,7 @@ export const Task = () => {
       <div id="task-box">
         {data.map((data, index) => {
           return (
-            <dl id="task-list">
+            <dl id="task-list" key={data.taskId}>
               <button><FontAwesomeIcon icon={faCheck} /></button>
               <button><FontAwesomeIcon icon={faEdit} /></button>
               <dt>{index+1}. {data.taskName}</dt>
