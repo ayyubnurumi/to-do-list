@@ -14,7 +14,7 @@ export const Login = () => {
   async function onLogin(e) {
     try {
       e.preventDefault();
-      const userCredentials = await axios.post("http://192.168.1.10:8082/users/login", data);
+      const userCredentials = await axios.post("http://localhost:8082/users/login", data);
       localStorage.setItem('userCredentials', JSON.stringify(userCredentials.data))
       navigate('/home');
     } catch (error) {

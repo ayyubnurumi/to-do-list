@@ -8,7 +8,7 @@ export const Registration = () => {
   const [data, setdata] = useState({
     userName: "",
     userEmail: "",
-    userFirsName: "",
+    userFirstName: "",
     userLastName: "",
     userPhoneNumber: "",
     userPassword1: "",
@@ -19,7 +19,7 @@ export const Registration = () => {
   async function onSubmit(e) {
     try {
       e.preventDefault();
-      await axios.post("http://192.168.1.10:8082/users/register", data);
+      await axios.post("http://localhost:8082/users/register", data);
       navigate("login");
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ export const Registration = () => {
         <input
           id="userFirstName"
           type="text"
-          onChange={(e) => setdata({ ...data, userFirsName: e.target.value })}
+          onChange={(e) => setdata({ ...data, userFirstName: e.target.value })}
           placeholder="what's your name?"
         />
         <label htmlFor="userLastName">Last Name</label>

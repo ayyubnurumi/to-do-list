@@ -2,10 +2,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import "./Task.css";
+import axios from "axios";
 
 export const Task = () => {
   const [newTask, setnewTask] = useState({ taskName: "", taskDetail: "" });
   const [update, setupdate] = useState(false);
+
+  async function taskList() {
+    await axios.post('http://localhost:8082/task/list')
+  }
+
+  console.log(taskList);
+
   const data = [
     {
       taskDetail: "mato",
