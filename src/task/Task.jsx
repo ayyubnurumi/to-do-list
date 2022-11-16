@@ -9,10 +9,10 @@ export const Task = () => {
   const [update, setupdate] = useState(false);
 
   async function taskList() {
-    await axios.post('http://localhost:8082/task/list')
+    await axios.post('task/list')
   }
 
-  console.log(taskList);
+  console.log(taskList());
 
   const data = [
     {

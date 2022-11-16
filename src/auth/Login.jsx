@@ -11,11 +11,12 @@ export const Login = () => {
   });
   // console.log(data);
 
-  async function onLogin(e) {
+  const onLogin = async e => {
     try {
       e.preventDefault();
-      const userCredentials = await axios.post("http://localhost:8082/users/login", data);
-      localStorage.setItem('userCredentials', JSON.stringify(userCredentials.data))
+      const response = await axios.post("users/login", data);
+      // console.log(response.data);
+      localStorage.setItem('userCredentials', JSON.stringify(response.data))
       navigate('/home');
     } catch (error) {
       console.log(error);
@@ -24,7 +25,7 @@ export const Login = () => {
 
   return (
     <div id="login-container">
-      <form className="auth" autoComplete="on">
+      <form className="auth" autoComplete="on" method="post">
         <h1>LogIn</h1>
         <label htmlFor="userName">Username</label>
         <input
