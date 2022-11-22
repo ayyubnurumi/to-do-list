@@ -1,20 +1,52 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://localhost:8082/';
+axios.defaults.baseURL = "http://localhost:8082/";
 
-axios.interceptors.response.use(resp => resp, async error => {
-    if (error.response.status === 401) {
-        const data = JSON.parse(localStorage.getItem('userCredentials'))
-        console.log(data);
-        const response = await axios.post('refresh', {}, {Bearer: `TOKEN ${data.refreshToken}`});
-        console.log(response);
+const instance = axios.create({
+  // baseURL: "http://localhost:8082/",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
-        if (response.status === 200) {
-            axios.defaults.headers.common['Authorization'] = `Bearer ${response.data['accessToken']}`;
+let refresh = false;
 
-            return axios(error.config)
-        }
+instance.interceptors.response.use(
+  (resp) => resp,
+  async (error) => {
+    if (error.response.status === 401 && !refresh) {
+      refresh = true;
+      const token = JSON.parse(localStorage.getItem("userCredentials"));
+      console.log(token);
+      const response = await axios.post(
+        "refresh",
+        {},
+        { headers: {refreshToken: token.refreshToken} }
+      );
+      console.log(response);
+
+      if (response.status === 200) {
+        axios.defaults.headers.common = {'Authorization': `Bearer ${response.data.accesToken}`};
+        // instance.interceptors.request.use(
+        //   (config) => {
+        //     if (token) {
+        //       config.headers["Authorization"] = `Bearer ${response.data.accesToken}`;  // for Spring Boot back-end
+        //       // config.headers["x-access-token"] = response.data.accesToken; // for Node.js Express back-end
+        //     }
+        //     return config;
+        //   },
+        //   (error) => {
+        //     return Promise.reject(error);
+        //   }
+        // );
+      }
     }
 
-    return error
-})
+    if (error.response.status === 403 && error.response.data) {
+      return Promise.reject(error.response.data);
+    }
+
+    refresh = false;
+    return error;
+  }
+);
