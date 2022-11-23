@@ -8,11 +8,8 @@ export const Task = () => {
   const [newTask, setnewTask] = useState({ taskName: "", taskDetail: "" });
   const [update, setupdate] = useState(false);
 
-  async function taskList() {
-    await axios.post('task/list')
-  }
-
-  console.log(taskList());
+  const taskList = async e =>  await axios.post('task/list');
+    console.log(taskList);
 
   const data = [
     {

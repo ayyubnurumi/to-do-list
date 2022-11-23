@@ -2,31 +2,26 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:8082/";
 
-const instance = axios.create({
-  // baseURL: "http://localhost:8082/",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
 let refresh = false;
 
-instance.interceptors.response.use(
+axios.interceptors.response.use(
   (resp) => resp,
   async (error) => {
     if (error.response.status === 401 && !refresh) {
       refresh = true;
       const token = JSON.parse(localStorage.getItem("userCredentials"));
-      console.log(token);
+      // console.log(token.refreshToken);
       const response = await axios.post(
         "refresh",
         {},
-        { headers: {refreshToken: token.refreshToken} }
+        { headers: {"Authorization": "Bearer " + token.refreshToken.replace(/^["'](.+(?=["']$))["']$/, '$1')} }
       );
-      console.log(response);
+      // console.log(response);
 
       if (response.status === 200) {
-        axios.defaults.headers.common = {'Authorization': `Bearer ${response.data.accesToken}`};
+        const access = response.data.accessToken.replace(/^["'](.+(?=["']$))["']$/, '$1');
+        // console.log(access);
+        axios.defaults.headers.common["Authorization"]= "Bearer " + access;
         // instance.interceptors.request.use(
         //   (config) => {
         //     if (token) {
