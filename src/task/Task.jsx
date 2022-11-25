@@ -2,30 +2,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import "./Task.css";
-import axios from "axios";
+// import axios from "axios";
+import "../service/task-service"
+import { addTask, deleteTask, getTaskList } from "../service/task-service";
+
 
 export const Task = () => {
   const [newTask, setnewTask] = useState({ taskName: "", taskDetail: "" });
   const [update, setupdate] = useState(false);
-  
-  const getTaskList = async () => {
-    const data = await axios.post("task/list");
-    console.log(data);
-    localStorage.setItem("list", JSON.stringify(data.data));
-  };
 
-  const addTask = async (e) => {
-    e.preventDefault();
-    await axios.post("task/create", newTask);
-    setnewTask({taskName: '', taskDetail: ''})
-    getTaskList();
-  };
+  getTaskList();
 
-  const deleteTask = async (id) => {
-    await axios.delete(`task/delete/${id}`);
-    getTaskList();
-    console.log(id);
-  }
+  addTask(newTask);
+
+  deleteTask();
 
   const taskLisk = JSON.parse(localStorage.getItem("list"));
 

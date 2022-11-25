@@ -22,9 +22,6 @@ axios.interceptors.response.use(
         const access = response.data.accessToken.replace(/^["'](.+(?=["']$))["']$/, '$1');
         // console.log(access);
         axios.defaults.headers.common["Authorization"]= `Bearer ${access}`;
-        // axios.defaults.headers.post["Authorization"]= `Bearer ${access}`;
-        // axios.defaults.headers.common= {"Authorization": `Bearer ${access}`};
-        // axios.defaults.headers.post= {"Authorization": `Bearer ${access}`};
       }
     }
 

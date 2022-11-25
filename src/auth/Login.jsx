@@ -41,6 +41,7 @@ export const Login = () => {
           type="password"
           required
           placeholder="password"
+          autoComplete="your password"
           onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
         />
         <input type="submit" value="LogIn" onClick={onLogin} />
