@@ -19,7 +19,7 @@ export const Registration = () => {
   async function onSubmit(e) {
     try {
       e.preventDefault();
-      await axios.post("users/register", data);
+      await axios.post("http://localhost:8082/users/register", data);
       navigate("login");
     } catch (error) {
       console.log(error);

@@ -1,25 +1,26 @@
 import axios from "axios";
 
+const baseURL = "http://localhost:8082/";
+
 export const getTaskList = async () => {
-  const data = await axios.post("task/list");
-  localStorage.setItem("list", JSON.stringify(data.data));
+  const data = await axios.post(`${baseURL}task/list`);
+  console.log(data);
+  localStorage.setItem('list', JSON.stringify(data.data));
 };
 
-export const addTask = async (data) => {
-  // e.preventDefault();
+export const addTask = async (e, data) => {
   await axios
-    .post("task/create", data)
-    .then(getTaskList(), (error) => console.log(error));
+    .post(`${baseURL}task/create`, data);
+    getTaskList();
 };
 
 export const deleteTask = async (id) => {
-  // e.preventDefault();
   await axios
-    .delete(`task/delete/${id}`)
-    .then(getTaskList(), (error) => console.log(error));
+    .delete(`${baseURL}task/delete/${id}`);
+    getTaskList();
 };
 
 export const editTask = async (id) => {
-  await axios.put(`task/update/${id}`);
+  await axios.put(`${baseURL}task/update/${id}`);
   getTaskList();
 };

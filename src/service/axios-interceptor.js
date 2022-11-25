@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8082/";
+const baseURL = "http://localhost:8082/";
 
 let refresh = false;
 
@@ -12,7 +12,7 @@ axios.interceptors.response.use(
       const token = JSON.parse(localStorage.getItem("userCredentials"));
       // console.log(token.refreshToken);
       const response = await axios.post(
-        "refresh",
+        `${baseURL}refresh`,
         {},
         { headers: {"Authorization": "Bearer " + token.refreshToken.replace(/^["'](.+(?=["']$))["']$/, '$1')} }
       );
