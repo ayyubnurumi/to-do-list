@@ -21,19 +21,10 @@ axios.interceptors.response.use(
       if (response.status === 200) {
         const access = response.data.accessToken.replace(/^["'](.+(?=["']$))["']$/, '$1');
         // console.log(access);
-        axios.defaults.headers.common["Authorization"]= "Bearer " + access;
-        // instance.interceptors.request.use(
-        //   (config) => {
-        //     if (token) {
-        //       config.headers["Authorization"] = `Bearer ${response.data.accesToken}`;  // for Spring Boot back-end
-        //       // config.headers["x-access-token"] = response.data.accesToken; // for Node.js Express back-end
-        //     }
-        //     return config;
-        //   },
-        //   (error) => {
-        //     return Promise.reject(error);
-        //   }
-        // );
+        axios.defaults.headers.common["Authorization"]= `Bearer ${access}`;
+        // axios.defaults.headers.post["Authorization"]= `Bearer ${access}`;
+        // axios.defaults.headers.common= {"Authorization": `Bearer ${access}`};
+        // axios.defaults.headers.post= {"Authorization": `Bearer ${access}`};
       }
     }
 

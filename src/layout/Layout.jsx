@@ -39,6 +39,7 @@ export const Layout = () => {
 
   const logout = () => {
     localStorage.removeItem("userCredentials");
+    localStorage.removeItem("list");
     setopen(false);
     navigate("login");
   };

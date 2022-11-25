@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import './interceptor/axios.js'
+import './service/axios-interceptor'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
