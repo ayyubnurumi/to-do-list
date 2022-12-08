@@ -10,7 +10,7 @@ export const Task = () => {
   const [update, setupdate] = useState(false);
   const [data, setdata] = useState([]);
   useEffect(() => {
-    document.title = "Home | todolist";
+    document.title = "home | todolist";
     getTaskList();
   });
 

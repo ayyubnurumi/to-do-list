@@ -1,9 +1,12 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "./auth.css";
 
 export const Registration = () => {
+  useEffect(() => {
+    document.title = "registration | todolist";
+  });
   const navigate = useNavigate();
   const [data, setdata] = useState({
     userName: "",

@@ -11,12 +11,12 @@
 }
 
 button#modal-btn {
-    margin: auto;
-    width: 200px;
-    height: 50px;
-    background-color: ivory;
-    border-radius: 17px;
-    font-size: medium;
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  background-color: ivory;
+  border-radius: 17px;
+  font-size: medium;
 }
 
 /* The Modal (background) */
@@ -111,10 +111,12 @@ div#modal-header {
   padding: 2px 5px;
   border-radius: 9px;
   font-size: larger;
-  color: lightgrey
+  color: lightgrey;
 }
 
-#add-task input:focus {color: black;}
+#add-task input:focus {
+  color: black;
+}
 
 #add-task input.submit {
   width: 60%;

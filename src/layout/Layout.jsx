@@ -49,7 +49,7 @@ export const Layout = () => {
       <header id="header">
         <h1 id="title">
           <a className="link" href="home">
-            to-do-list ayyub
+            to-do-list
           </a>
         </h1>
         {user ? (

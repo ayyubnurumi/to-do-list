@@ -1,11 +1,11 @@
 #login-container, #regist-container {
     width: 100%;
-    min-height: 70vh;
+    min-height: 75vh;
     background-color: grey;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 10px;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 form.auth {
@@ -16,6 +16,7 @@ form.auth {
     padding: 10px;
     border-radius: 17px;
     background-color: ivory;
+    box-sizing: border-box;
 }
 
 form.auth h1 {
@@ -38,4 +39,16 @@ form.auth input {
 
 .p {
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .form.auth {width: 95%;}
+}
+
+@media screen and (min-height: 900px) {
+    #login-container, #regist-container {min-height: 85vh;}
+}
+
+@media screen and (min-height: 1200px) {
+    #login-container, #regist-container {min-height: 90vh;}
 }

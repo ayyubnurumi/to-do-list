@@ -1,15 +1,17 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./auth.css"
 
 export const Login = () => {
+  useEffect(() => {
+    document.title = "login | todolist";
+  });
   const navigate = useNavigate()
   const [data, setdata] = useState({
     userName: "",
     userPassword: "",
   });
-  // console.log(data);
 
   const onLogin = async e => {
     try {

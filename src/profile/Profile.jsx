@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Profile.css";
 
 export const Profile = () => {
+  useEffect(() => {
+    document.title = "profile | todolist";
+  });
   const userData = JSON.parse(localStorage.userCredentials);
   return (
     <div id="profile-container">
