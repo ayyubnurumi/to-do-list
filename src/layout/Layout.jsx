@@ -40,8 +40,6 @@ export const Layout = () => {
   const logout = () => {
     localStorage.removeItem("userCredentials");
     localStorage.removeItem("list");
-    localStorage.removeItem("http://localhost:8082/list");
-    localStorage.removeItem("allOrdersList")
     setopen(false);
     navigate("login");
   };
