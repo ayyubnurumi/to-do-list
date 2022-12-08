@@ -8,7 +8,7 @@ export const getTaskList = async () => {
   localStorage.setItem('list', JSON.stringify(data.data));
 };
 
-export const addTask = async (e, data) => {
+export const addTask = async (data) => {
   await axios
     .post(`${baseURL}task/create`, data);
     getTaskList();

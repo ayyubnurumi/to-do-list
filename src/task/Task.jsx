@@ -17,30 +17,30 @@ export const Task = () => {
 
   deleteTask();
 
-  const taskLisk = JSON.parse(localStorage.getItem("list"));
+  const taskList = JSON.parse(localStorage.getItem("list"));
 
   return (
     <div id="task-container">
-      <form id="add-task" onSubmit={addTask}>
+      <form id="add-task">
         <input
           type="text"
           id="taskName"
-          value={newTask.taskName}
+          // value={newTask.taskName}
           onChange={(e) => setnewTask({ ...newTask, taskName: e.target.value })}
         />
         <input
           type="text"
           id="taskDetail"
-          value={newTask.taskDetail}
+          // value={newTask.taskDetail}
           onChange={(e) =>
             setnewTask({ ...newTask, taskDetail: e.target.value })
           }
         />
-        <input type="submit" className="submit" value="add" />
+        <input type="submit" className="submit" value="add" onClick={addTask} />
       </form>
       <div id="task-box">
-        { taskLisk ?
-        taskLisk.map((data, index) => {
+        { taskList ?
+        taskList.map((data, index) => {
           return (
             <dl id="task-list" key={data.taskId}>
               <button onClick={() => deleteTask(data.taskId)}>
