@@ -29,22 +29,22 @@ export const Registration = () => {
   return (
     <div id="regist-container">
       <form className="auth" autoComplete="on">
-        <h1>Registration</h1>
-        <label htmlFor="userFirstName"> First Name</label>
+        <h1>registration</h1>
+        <label htmlFor="userFirstName">first name</label>
         <input
           id="userFirstName"
           type="text"
           onChange={(e) => setdata({ ...data, userFirstName: e.target.value })}
           placeholder="what's your name?"
         />
-        <label htmlFor="userLastName">Last Name</label>
+        <label htmlFor="userLastName">last name</label>
         <input
           id="userLastNeme"
           type="text"
           onChange={(e) => setdata({ ...data, userLastName: e.target.value })}
           placeholder="any last name? or your family name?"
         />
-        <label htmlFor="userName">Username</label>
+        <label htmlFor="userName">username</label>
         <input
           id="userName"
           required
@@ -52,7 +52,7 @@ export const Registration = () => {
           onChange={(e) => setdata({ ...data, userName: e.target.value })}
           placeholder="username"
         />
-        <label htmlFor="userEmail">E-mail</label>
+        <label htmlFor="userEmail">e-mail</label>
         <input
           id="userEmail"
           required
@@ -60,7 +60,7 @@ export const Registration = () => {
           onChange={(e) => setdata({ ...data, userEmail: e.target.value })}
           placeholder="please enter a proper e-mail addres"
         />
-        <label htmlFor="userPhoneNumber">Phone Number</label>
+        <label htmlFor="userPhoneNumber">phone number</label>
         <input
           id="userPhoneNumber"
           type="tel"
@@ -70,7 +70,7 @@ export const Registration = () => {
           }
           placeholder="format: 088812345679"
         />
-        <label htmlFor="userPassword1">Password</label>
+        <label htmlFor="userPassword1">password</label>
         <input
           id="userPassword1"
           required
@@ -80,7 +80,7 @@ export const Registration = () => {
           placeholder="password"
           autoComplete="on"
         />
-        <label htmlFor="userPassword2">Confirm Password</label>
+        <label htmlFor="userPassword2">confirm password</label>
         <input
           id="userPassword2"
           required
@@ -90,9 +90,9 @@ export const Registration = () => {
           placeholder="confirm password"
           autoComplete="on"
         />
-        <input type="submit" onClick={onSubmit} />
+        <input type="submit" value='submit' onClick={onSubmit} />
         <p className="p">
-          already have an account! <a href="login">logIn</a>
+          already have an account! <a href="login">login</a>
         </p>
       </form>
     </div>

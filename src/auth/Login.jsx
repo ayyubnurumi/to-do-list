@@ -26,8 +26,8 @@ export const Login = () => {
   return (
     <div id="login-container">
       <form className="auth" autoComplete="on" method="post">
-        <h1>LogIn</h1>
-        <label htmlFor="userName">Username</label>
+        <h1>login</h1>
+        <label htmlFor="userName">username</label>
         <input
           id="userName"
           type="text"
@@ -35,7 +35,7 @@ export const Login = () => {
           placeholder="username"
           onChange={(e) => setdata({ ...data, userName: e.target.value })}
         />
-        <label htmlFor="userPassword">Password</label>
+        <label htmlFor="userPassword">password</label>
         <input
           id="userPassword"
           type="password"
@@ -44,7 +44,7 @@ export const Login = () => {
           autoComplete="your password"
           onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
         />
-        <input type="submit" value="LogIn" onClick={onLogin} />
+        <input type="submit" value="login" onClick={onLogin} />
         <p className="p">don't have an account? <a href="registration">register</a></p>
       </form>
     </div>

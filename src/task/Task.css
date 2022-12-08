@@ -1,63 +1,156 @@
 #task-container {
-    width: 100%;
-    background-image: url('task-bg.jpg');
-    background-size: 20%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  background-size: 20%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+
+button#modal-btn {
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    background-color: ivory;
+    border-radius: 17px;
+    font-size: medium;
+}
+
+/* The Modal (background) */
+div#modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+div#modal-content {
+  position: relative;
+  background-color: ivory;
+  border-radius: 15px;
+  margin: auto;
+  padding: 0;
+  width: 70%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: ivory;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: tomato;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+div#modal-header {
+  padding: 2px 16px;
+  background-color: black;
+  color: ivory;
+  border-radius: 15px 15px 0 0;
 }
 
 #add-task {
-    width: 70%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    padding: 17px;
-    background-color: ivory;
-    border: 1px solid ivory;
-    border-radius: 17px;
-    box-sizing: border-box;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 17px;
+  border-radius: 17px;
+  box-sizing: border-box;
 }
 
 #add-task input {
-    margin: auto;
-    width: 45%;
+  margin: 5px auto;
+  width: 80%;
+  height: 30px;
+  padding: 2px 5px;
+  border-radius: 9px;
+  font-size: larger;
+  color: lightgrey
 }
 
+#add-task input:focus {color: black;}
+
 #add-task input.submit {
-    width: 70px;
-    padding: 0;
-    margin-left: 5px;
+  width: 60%;
+  background-color: grey;
+  cursor: pointer;
 }
 
 #task-box {
-    width: 40%;
-    margin: auto;
-    margin-top: 40px;
-    max-height: 500px;
-    text-align: left;
-    padding: 17px;
-    background-color: ivory;
-    border-radius: 17px;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  max-height: 500px;
+  text-align: left;
+  padding: 20px 30px;
+  background-color: ivory;
+  border-radius: 17px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 #task-list {
-    width: 100%;
-    margin: 9px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid lightgray;
+  width: 100%;
+  margin: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
 }
 
 #task-list button {
-    float: right;
-    opacity: 0.01;
+  float: right;
+  opacity: 0.01;
 }
 
 #task-list:hover button {
-    opacity: 1;
+  opacity: 1;
 }
 
 #task-list button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

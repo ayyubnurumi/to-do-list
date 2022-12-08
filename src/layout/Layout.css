@@ -14,18 +14,19 @@
 }
 
 #title {
-    margin: auto;
-    margin-left: 20px;
-    float: left;
+  margin: auto;
+  margin-left: 20px;
+  float: left;
 }
 
 .link {
-    color: ivory;
-    text-decoration: none;
+  color: ivory;
+  text-decoration: none;
 }
 
-#title, .link :hover {
-    cursor: pointer;
+#title,
+.link :hover {
+  cursor: pointer;
 }
 
 .icon {
@@ -46,23 +47,24 @@
 .menu {
   position: absolute;
   right: 10px;
-  top: 60px;
+  top: 70px;
 
   list-style-type: none;
   margin: 5px 0;
   padding: 0;
 
-  border: 1px solid grey;
-  border-radius: 11px;
   width: 150px;
   box-sizing: border-box;
 }
 
 .menu > li {
   margin: 0;
-  border-radius: 11px;
   background-color: ivory;
 }
+
+.menu > li:first-child {border-radius: 11px 11px 0 0;}
+
+.menu > li:last-child {border-radius: 0 0 11px 11px;}
 
 .menu > li:hover {
   background-color: lightgray;
@@ -84,7 +86,7 @@
 }
 
 .menu > li > button.danger:hover {
-  background-color: red;
+  background-color: tomato;
   color: ivory;
 }
 

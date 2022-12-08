@@ -102,7 +102,7 @@ export const Layout = () => {
         ) : null}
       </header>
       <Outlet />
-      <footer id="footer">made by ayyub</footer>
+      <footer id="footer">made by nurumi</footer>
     </div>
   );
 };
