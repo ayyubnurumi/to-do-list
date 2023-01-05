@@ -32,11 +32,6 @@ export const Task = () => {
     getTaskList();
   };
 
-  // const editTask = async (id) => {
-  //   await axios.put(`${baseURL}task/update/${id}`);
-  //   getTaskList();
-  // };
-
   return (
     <div id="task-container">
       <button id="modal-btn"
