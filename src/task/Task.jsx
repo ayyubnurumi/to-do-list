@@ -12,24 +12,20 @@ export const Task = () => {
   useEffect(() => {
     document.title = "home | todolist";
     getTaskList();
-  });
+  }, []);
 
-  const baseURL = "http://localhost:8082/";
+  axios.defaults.baseURL= "http://localhost:8082/";
 
-  const getTaskList = async () => {
-    const dataApi = await axios.post(`${baseURL}task/list`);
-    setdata(dataApi.data);
+  const getTaskList = () => {
+    axios.post(`task/list`).then((resp) => setdata(resp.data));
   };
 
-  const addTask = async (e) => {
-    e.preventDefault();
-    await axios.post(`${baseURL}task/create`, newTask);
-    getTaskList();
+  const addTask = () => {
+    axios.post(`task/create`, newTask);
   };
 
-  const deleteTask = async (id) => {
-    await axios.delete(`${baseURL}task/delete/${id}`);
-    getTaskList();
+  const deleteTask = (id) => {
+    axios.delete(`task/delete/${id}`);
   };
 
   return (

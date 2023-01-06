@@ -1,29 +1,33 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./auth.css"
+import "./auth.css";
 
 export const Login = () => {
   useEffect(() => {
     document.title = "login | todolist";
   });
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [data, setdata] = useState({
     userName: "",
     userPassword: "",
   });
 
-  const onLogin = async e => {
-    try {
-      e.preventDefault();
-      const response = await axios.post(`http://localhost:8082/users/login`, data);
-      // console.log(response.data);
-      localStorage.setItem('userCredentials', JSON.stringify(response.data))
-      navigate('/home');
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const onLogin = () => {
+    axios
+      .post(`http://localhost:8082/users/login`, data)
+      .then((response) => {
+        console.log(response.data);
+        if (response !== undefined || null) {
+          localStorage.setItem(
+            "userCredentials",
+            JSON.stringify(response.data)
+          );
+          navigate('home');
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div id="login-container">
@@ -47,7 +51,9 @@ export const Login = () => {
           onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
         />
         <input type="submit" value="login" onClick={onLogin} />
-        <p className="p">don't have an account? <a href="registration">register</a></p>
+        <p className="p">
+          don't have an account? <a href="registration">register</a>
+        </p>
       </form>
     </div>
   );

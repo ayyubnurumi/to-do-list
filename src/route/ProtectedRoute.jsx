@@ -12,5 +12,5 @@ const isUserLogin = () => {
 
 export const ProtectedRoute = () => {
   const getIn = isUserLogin();
-  return getIn ? <Outlet /> : <Navigate to={"login"} replace />;
+  return getIn ? <Outlet /> : <Navigate to={"/login"} replace />;
 };
