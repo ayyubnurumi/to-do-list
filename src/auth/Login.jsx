@@ -18,7 +18,7 @@ export const Login = () => {
       .post(`http://localhost:8082/users/login`, data)
       .then((response) => {
         console.log(response.data);
-        if (response !== undefined || null) {
+        if (response) {
           localStorage.setItem(
             "userCredentials",
             JSON.stringify(response.data)

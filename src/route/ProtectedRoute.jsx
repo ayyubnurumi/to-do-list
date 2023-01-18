@@ -6,8 +6,7 @@ const isUserLogin = () => {
   if (!user) {
     return false;
   } else {
-    return true;
-    
+    return true;  
   }
 };
 
