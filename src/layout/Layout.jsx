@@ -16,7 +16,7 @@ export const Layout = () => {
   const navigate = useNavigate();
   const [open, setopen] = useState(false);
 
-  const user = localStorage.getItem("userCredentials");
+  const user = localStorage.getItem("user");
 
   const handleOpen = () => {
     setopen(!open);
@@ -38,10 +38,7 @@ export const Layout = () => {
   };
 
   const logout = () => {
-    localStorage.removeItem("userCredentials");
-    localStorage.removeItem("list");
     setopen(false);
-    navigate("login");
   };
 
   return (

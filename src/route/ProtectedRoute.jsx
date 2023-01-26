@@ -1,16 +1,7 @@
 import React from "react";
-import { Navigate, Outlet } from "react-router";
-
-const isUserLogin = () => {
-  const user = localStorage.getItem("userCredentials")
-  if (!user) {
-    return false;
-  } else {
-    return true;  
-  }
-};
+import { Navigate } from "react-router";
 
 export const ProtectedRoute = () => {
-  const getIn = isUserLogin();
-  return getIn ? <Outlet /> : <Navigate to={"/login"} replace />;
+  const user = localStorage.getItem("userCredentials")
+  return user? <Navigate to={"home"} replace /> : <Navigate to={"login"} replace />;
 };

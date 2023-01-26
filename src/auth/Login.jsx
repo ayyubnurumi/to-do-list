@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./auth.css";
@@ -6,7 +5,7 @@ import "./auth.css";
 export const Login = () => {
   useEffect(() => {
     document.title = "login | todolist";
-  });
+  },[]);
   const navigate = useNavigate();
   const [data, setdata] = useState({
     userName: "",
@@ -14,24 +13,14 @@ export const Login = () => {
   });
 
   const onLogin = () => {
-    axios
-      .post(`http://localhost:8082/users/login`, data)
-      .then((response) => {
-        console.log(response.data);
-        if (response) {
-          localStorage.setItem(
-            "userCredentials",
-            JSON.stringify(response.data)
-          );
-          navigate('home');
-        }
-      })
-      .catch((error) => console.log(error));
+    console.log(data);
+    localStorage("user", JSON.stringify(data));
+    navigate("/home");
   };
 
   return (
     <div id="login-container">
-      <form className="auth" autoComplete="on" method="post">
+      <form className="auth" autoComplete="on" onSubmit={onLogin}>
         <h1>login</h1>
         <label htmlFor="userName">username</label>
         <input
@@ -50,7 +39,7 @@ export const Login = () => {
           autoComplete="your password"
           onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
         />
-        <input type="submit" value="login" onClick={onLogin} />
+        <input type="submit" value="login" />
         <p className="p">
           don't have an account? <a href="registration">register</a>
         </p>

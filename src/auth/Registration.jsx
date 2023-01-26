@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "./auth.css";
@@ -6,7 +5,7 @@ import "./auth.css";
 export const Registration = () => {
   useEffect(() => {
     document.title = "registration | todolist";
-  });
+  },[]);
   const navigate = useNavigate();
   const [data, setdata] = useState({
     userName: "",
@@ -17,16 +16,10 @@ export const Registration = () => {
     userPassword1: "",
     userPassword2: "",
   });
-  console.log(data);
-
-  async function onSubmit(e) {
-    try {
-      e.preventDefault();
-      await axios.post("http://localhost:8082/users/register", data);
-      navigate("login");
-    } catch (error) {
-      console.log(error);
-    }
+  
+  function onSubmit() {
+    console.log(data);
+    navigate("login")
   }
 
   return (

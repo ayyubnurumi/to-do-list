@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
 import "./Task.css";
-import axios from "axios";
 
 export const Task = () => {
   var modal = document.getElementById("modal");
@@ -11,25 +10,14 @@ export const Task = () => {
   const [data, setdata] = useState([]);
   useEffect(() => {
     document.title = "home | todolist";
-    getTaskList();
   }, []);
 
-  axios.defaults.baseURL= "http://localhost:8082/";
 
-  const getTaskList = () => {
-    axios.post(`task/list`).then((resp) => setdata(resp.data));
-  };
-
-  const addTask = () => {
-    axios.post(`task/create`, newTask);
-  };
-
-  const deleteTask = (id) => {
-    axios.delete(`task/delete/${id}`);
-  };
 
   return (
     <div id="task-container">
+
+      {/* add task's button */}
       <button id="modal-btn"
         onClick={() => {
           modal.style.display = "block";
@@ -37,6 +25,8 @@ export const Task = () => {
       >
         add new task
       </button>
+      
+      {/* add task's modal */}
       <div id="modal" onClick={(e)=>{if(e.target === modal){modal.style.display = "none"}}}>
         <div id="modal-content">
           <div id="modal-header">
@@ -64,17 +54,19 @@ export const Task = () => {
               type="submit"
               className="submit"
               value="add new task"
-              onClick={() => addTask()}
+              onClick={() => console.log(newTask)}
             />
           </form>
         </div>
       </div>
+
+      {/* task list */}
       <div id="task-box">
         {data
           ? data.map((data, index) => {
               return (
                 <dl id="task-list" key={data.taskId}>
-                  <button onClick={() => deleteTask(data.taskId)}>
+                  <button onClick={() => (data.taskId)}>
                     <FontAwesomeIcon icon={faCheck} />
                   </button>
                   <button onClick={() => setupdate(!update)}>
