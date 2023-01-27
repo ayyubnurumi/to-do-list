@@ -20,15 +20,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* <Route path="/" element={<PublicRoute />}> */}
-            <Route index path="login" element={<Login />}/>
-            <Route path="registration" element={<Registration />} />
-            <Route path="/" element={<Navigate to="login" />} replace />
-          {/* </Route> */}
-          {/* <Route path="/" element={<ProtectedRoute />}> */}
-            <Route path="home" element={<Task />} />
-            <Route path="profile" element={<Profile />} />
-            {/* <Route path="/" element={<Navigate to="home" />} replace /> */}
-          {/* </Route> */}
+            <Route index path="/login" element={<Login />}/>
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/" element={<Navigate to="/login" />} replace />
+          {/* </Route>
+          <Route path="/" element={<ProtectedRoute />}> */}
+            <Route path="/home" element={<Task />} />
+            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/" element={<Navigate to="/home" />} replace />
+          </Route> */}
         </Route>
         <Route path="*" element={<Navigate to="/" />} replace/>
       </Routes>

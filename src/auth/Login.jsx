@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./auth.css";
 
 export const Login = () => {
@@ -14,13 +14,13 @@ export const Login = () => {
 
   const onLogin = () => {
     console.log(data);
-    localStorage("user", JSON.stringify(data));
-    navigate("/home");
+    localStorage.setItem("user", JSON.stringify(data));
+    navigate('/home')
   };
 
   return (
     <div id="login-container">
-      <form className="auth" autoComplete="on" onSubmit={onLogin}>
+      <form className="auth" autoComplete="on">
         <h1>login</h1>
         <label htmlFor="userName">username</label>
         <input
@@ -39,7 +39,7 @@ export const Login = () => {
           autoComplete="your password"
           onChange={(e) => setdata({ ...data, userPassword: e.target.value })}
         />
-        <input type="submit" value="login" />
+        <input type="button" value="login" onClick={onLogin} />
         <p className="p">
           don't have an account? <a href="registration">register</a>
         </p>

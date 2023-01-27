@@ -19,7 +19,7 @@ export const Registration = () => {
   
   function onSubmit() {
     console.log(data);
-    navigate("login")
+    navigate("/login")
   }
 
   return (
@@ -86,7 +86,7 @@ export const Registration = () => {
           placeholder="confirm password"
           autoComplete="on"
         />
-        <input type="submit" value='submit' onClick={onSubmit} />
+        <input type="button" value='submit' onClick={onSubmit} />
         <p className="p">
           already have an account! <a href="login">login</a>
         </p>

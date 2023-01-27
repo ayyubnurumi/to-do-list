@@ -12,8 +12,6 @@ export const Task = () => {
     document.title = "home | todolist";
   }, []);
 
-
-
   return (
     <div id="task-container">
 
@@ -51,10 +49,10 @@ export const Task = () => {
               }
             />
             <input
-              type="submit"
+              type="button"
               className="submit"
               value="add new task"
-              onClick={() => console.log(newTask)}
+              onClick={() => {console.log(newTask); modal.style.display = "none"}}
             />
           </form>
         </div>
