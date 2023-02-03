@@ -12,14 +12,14 @@ export const Task = () => {
     document.title = "home | todolist";
   }, []);
 
+  const openModal = () => modal.style.display = "block";
+
   return (
     <div id="task-container">
 
       {/* add task's button */}
       <button id="modal-btn"
-        onClick={() => {
-          modal.style.display = "block";
-        }}
+        onClick={openModal}
       >
         add new task
       </button>
