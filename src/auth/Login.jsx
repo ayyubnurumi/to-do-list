@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
+import authService from "../service/authService";
 import "./auth.css";
 
 export const Login = () => {
   useEffect(() => {
     document.title = "login | todolist";
-  },[]);
+  }, []);
   const navigate = useNavigate();
   const [data, setdata] = useState({
     userName: "",
@@ -13,9 +14,14 @@ export const Login = () => {
   });
 
   const onLogin = () => {
-    console.log(data);
-    localStorage.setItem("user", JSON.stringify(data));
-    navigate('/home')
+    authService
+      .login()
+      .then((resp) => {
+        console.log(resp);
+        localStorage.setItem("user", JSON.stringify(resp));
+        navigate("/home");
+      })
+      .catch((e) => console.log(e));
   };
 
   return (
